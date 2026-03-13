@@ -3,6 +3,7 @@
 // 属の検索表 — カヤツリグサ科
 var GENUS_NODES = {
   start: {
+    question: "鱗片の数",
     options: [{
       label: "A",
       text: "痩果の鱗片は2枚以下",
@@ -18,6 +19,7 @@ var GENUS_NODES = {
     }]
   },
   g2: {
+    question: "花序の性別",
     options: [{
       label: "B",
       text: "花序は単性花",
@@ -29,6 +31,7 @@ var GENUS_NODES = {
     }]
   },
   g3: {
+    question: "果胞の有無と基部の形態",
     options: [{
       label: "C",
       text: "痩果は果胞で包まれ、基部にコップ状の脚部はない",
@@ -40,6 +43,7 @@ var GENUS_NODES = {
     }]
   },
   g4: {
+    question: "果胞の閉じ方と花の性",
     options: [{
       label: "D",
       text: "果胞は完全に閉じて、小穂はすべて単性花",
@@ -61,6 +65,7 @@ var GENUS_NODES = {
     }]
   },
   g5: {
+    question: "花序の形と位置",
     options: [{
       label: "D",
       text: "花序は頭状で腋生し短い柄をもち、痩果は2枚の鱗片に強く包まれる",
@@ -80,6 +85,7 @@ var GENUS_NODES = {
     }]
   },
   g8: {
+    question: "小穂の花の性質",
     options: [{
       label: "C",
       text: "小穂の花はまばらで、ほとんどが両性花",
@@ -91,6 +97,7 @@ var GENUS_NODES = {
     }]
   },
   g9: {
+    question: "鱗片の配列",
     options: [{
       label: "D",
       text: "小穂の花は2列性",
@@ -102,6 +109,7 @@ var GENUS_NODES = {
     }]
   },
   g10: {
+    question: "柱頭基部の形態",
     options: [{
       label: "E",
       text: "柱頭の基部は肥厚する",
@@ -117,6 +125,7 @@ var GENUS_NODES = {
     }]
   },
   g11: {
+    question: "柱頭の宿存性",
     options: [{
       label: "F",
       text: "柱頭は早落性",
@@ -136,6 +145,7 @@ var GENUS_NODES = {
     }]
   },
   g12: {
+    question: "茎の構造",
     options: [{
       label: "E",
       text: "茎は中空",
@@ -155,6 +165,7 @@ var GENUS_NODES = {
     }]
   },
   g13: {
+    question: "小穂の鱗片配列",
     options: [{
       label: "D",
       text: "小穂は螺旋状につく（テンツキ属の数種を除く）",
@@ -166,6 +177,7 @@ var GENUS_NODES = {
     }]
   },
   g14: {
+    question: "花被片の有無",
     options: [{
       label: "E",
       text: "花被片はない",
@@ -177,6 +189,7 @@ var GENUS_NODES = {
     }]
   },
   g15: {
+    question: "小穂の数と柱頭基部",
     options: [{
       label: "F",
       text: "小穂は単生し、柱頭の基部は明瞭でない",
@@ -192,6 +205,7 @@ var GENUS_NODES = {
     }]
   },
   g16: {
+    question: "柱頭基部の宿存性",
     options: [{
       label: "G",
       text: "柱頭の基部は早落性",
@@ -211,6 +225,7 @@ var GENUS_NODES = {
     }]
   },
   g19: {
+    question: "花被片の形",
     options: [{
       label: "F",
       text: "花被片は鱗片状",
@@ -226,6 +241,7 @@ var GENUS_NODES = {
     }]
   },
   g20: {
+    question: "小穂の数",
     options: [{
       label: "G",
       text: "小穂は1個で頂生する",
@@ -237,6 +253,7 @@ var GENUS_NODES = {
     }]
   },
   g21: {
+    question: "柱頭基部の肥厚",
     options: [{
       label: "H",
       text: "柱頭の基部は肥厚する",
@@ -256,6 +273,7 @@ var GENUS_NODES = {
     }]
   },
   g22: {
+    question: "花被片の数と形",
     options: [{
       label: "H",
       text: "花被片は10個以上で糸状で平滑",
@@ -271,6 +289,7 @@ var GENUS_NODES = {
     }]
   },
   g23: {
+    question: "鱗片の毛の有無",
     options: [{
       label: "I",
       text: "鱗片の表面に毛がある",
@@ -282,6 +301,7 @@ var GENUS_NODES = {
     }]
   },
   g23a: {
+    question: "葉の位置と茎の節",
     options: [{
       label: "J",
       text: "葉は根生するものと茎から出るものの両方があり、茎には節がある",
@@ -301,6 +321,7 @@ var GENUS_NODES = {
     }]
   },
   g23b: {
+    question: "茎の内部構造と節",
     options: [{
       label: "J",
       text: "茎は中空で数個から多数の節がある",
@@ -320,6 +341,7 @@ var GENUS_NODES = {
     }]
   },
   g24: {
+    question: "茎の節と根茎・生育地",
     options: [{
       label: "E",
       text: "茎には多くの節があり葉鞘で覆われ、非常に長い根茎をもち、海岸に生育する",
@@ -335,6 +357,7 @@ var GENUS_NODES = {
     }]
   },
   g25: {
+    question: "花穂の結実数",
     options: [{
       label: "F",
       text: "花穂は1花のみ結実",
@@ -346,6 +369,7 @@ var GENUS_NODES = {
     }]
   },
   g26: {
+    question: "苞と花の包まれ方",
     options: [{
       label: "G",
       text: "小穂の苞は鱗片状、花は2個の被膜（鱗片と前葉）に包まれる",
@@ -365,6 +389,7 @@ var GENUS_NODES = {
     }]
   },
   g27: {
+    question: "痩果の稜と小軸の関係",
     options: [{
       label: "G",
       text: "痩果の稜の1個が小軸に向く",

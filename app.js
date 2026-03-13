@@ -88,9 +88,9 @@ function App() {
         {screen === "home" && (
           <div className="home">
             <div className="home-hero">
-              <span className="home-plant">🌿</span>
+              {/* <span className="home-plant">🌿</span>
               <div className="home-title">カヤツリグサ科植物検索表</div>
-              <div className="home-subtitle">Cyperaceae of Japan — Interactive Dichotomous Key</div>
+              <div className="home-subtitle">Cyperaceae of Japan — Interactive Dichotomous Key</div> */}
               <div className="home-desc">
                 標本の形質を観察しながら順番に選択することで、属・節を同定します。
                 まず「属の検索」からはじめてください。スゲ属（Carex）が同定されたら「節の検索」へ進みます。
