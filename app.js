@@ -175,12 +175,7 @@ function App() {
                     </button>
                     {opt.candidates && opt.candidates.length > 0 && (
                       <div className="option-candidates">
-                        {opt.candidates.map((sp, j) => (
-                          <div key={j} className="candidate-chip">
-                            <span>{sp.name}</span>
-                            <span className="candidate-chip-latin">{sp.latin}</span>
-                          </div>
-                        ))}
+                        {opt.candidates.map(sp => sp.name).join('・')}
                       </div>
                     )}
                     {i < currentNode.options.length - 1 && (

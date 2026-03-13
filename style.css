@@ -1,7 +1,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Zen Kaku Gothic New', 'Noto Serif JP', sans-serif;
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
     background: #f2ede3;
     min-height: 100vh;
   }
@@ -40,9 +40,9 @@
   }
 
   .header-title {
-    font-family: 'Noto Serif JP', serif;
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.03em;
     flex: 1;
   }
@@ -53,7 +53,7 @@
     letter-spacing: 0.08em;
     font-weight: 300;
     margin-top: 2px;
-    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
   }
 
   .header-btn {
@@ -95,7 +95,7 @@
   }
 
   .home-title {
-    font-family: 'Noto Serif JP', serif;
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
     font-size: 22px;
     font-weight: 700;
     color: #1e3a28;
@@ -161,7 +161,7 @@
   .key-card-text { flex: 1; }
 
   .key-card-title {
-    font-family: 'Noto Serif JP', serif;
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: #1e3a28;
@@ -343,6 +343,7 @@
     padding: 16px 18px;
     cursor: pointer;
     font-family: inherit;
+    font-size: 1em;
     transition: all 0.2s ease;
     display: flex;
     align-items: flex-start;
@@ -461,7 +462,7 @@
   }
 
   .result-name {
-    font-family: 'Noto Serif JP', serif;
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
     font-size: 26px;
     font-weight: 700;
     letter-spacing: 0.03em;
@@ -507,7 +508,7 @@
   }
 
   .result-page-num {
-    font-family: 'Noto Serif JP', serif;
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
     font-size: 20px;
     font-weight: 700;
     color: #1e3a28;
@@ -641,30 +642,12 @@
 
   /* ====== CANDIDATES per option ====== */
   .option-candidates {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    padding: 8px 14px 10px 52px;
+    padding: 6px 14px 10px 62px;
     background: #f8faf8;
     border-left: 2px solid #d4e8d6;
     margin: 0 0 2px 0;
     border-radius: 0 0 10px 10px;
-  }
-
-  .candidate-chip {
-    background: white;
-    border: 1px solid #d4e8d6;
-    border-radius: 20px;
-    padding: 3px 9px;
-    font-size: 11px;
+    font-size: 12px;
     color: #2d5a3d;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-
-  .candidate-chip-latin {
-    font-size: 10px;
-    color: #8aaa8a;
-    font-style: italic;
+    line-height: 1.7;
   }
