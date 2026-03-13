@@ -306,7 +306,7 @@ body {
 }
 
 .option-card {
-  touch-action: manipulation; /* これを追加 */
+  touch-action: manipulation;
   background: white;
   border: 2px solid #4caf50;
   border-radius: 8px;
@@ -342,9 +342,6 @@ body {
     background-color 0s,
     transform 0s;
 }
-.option-card:active .option-candidates {
-  border-top-color: rgba(76, 175, 80, 0.3);
-}
 
 .option-card-top {
   display: flex;
@@ -375,6 +372,14 @@ body {
   padding: 8px 18px 12px;
   border-top: 1px dashed #e0e0e0;
   line-height: 1.5;
+}
+
+/* ====== SHARED LABEL META ====== */
+/* result-page-label と result-trail-title の共通部分を統合 */
+.label-meta {
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* ====== RESULT SCREEN ====== */
@@ -441,11 +446,9 @@ body {
   flex: 1;
 }
 
+/* label-meta との併用で共通スタイルを継承 */
 .result-page-label {
   font-size: 0.75em;
-  color: #999;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .result-page-num {
@@ -464,13 +467,11 @@ body {
   margin-bottom: 16px;
 }
 
+/* label-meta との併用で共通スタイルを継承 */
 .result-trail-title {
   font-size: 0.8em;
-  color: #999;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 8px;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .result-trail-items {
@@ -563,10 +564,4 @@ body {
   color: #999;
   text-align: center;
   line-height: 1.7;
-}
-
-@media screen and (max-width: 768px) {
-  .result-actions {
-    flex-direction: column;
-  }
 }

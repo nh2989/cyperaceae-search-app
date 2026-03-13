@@ -34,16 +34,17 @@ function App() {
     }
   };
 
+  // ① goSubKey を削除し、② goBack を整理（result は常に key 画面へ戻る）
   const goBack = () => {
     if (history.length === 0) {
       setScreen("home");
-    } else {
-      const prev = history[history.length - 1];
-      setHistory((h) => h.slice(0, -1));
-      setCurrentNodeId(prev.nodeId);
-      setResult(null);
-      if (screen === "result") setScreen("key");
+      return;
     }
+    const prev = history[history.length - 1];
+    setHistory((h) => h.slice(0, -1));
+    setCurrentNodeId(prev.nodeId);
+    setResult(null);
+    setScreen("key");
   };
 
   const resetKey = () => {
@@ -59,10 +60,6 @@ function App() {
     setCurrentNodeId("start");
     setHistory([]);
     setResult(null);
-  };
-
-  const goSubKey = (subKeyId) => {
-    startKey(subKeyId);
   };
 
   const stepNum = history.length + 1;
@@ -105,15 +102,12 @@ function App() {
                   className="key-card"
                   onClick={() => startKey(key.id)}
                 >
+                  {/* ③ icon をデータ側（ALL_KEYS）から参照 */}
                   <div
                     className="key-card-icon"
                     style={{ background: `${key.color}18` }}
                   >
-                    {key.id === "genus"
-                      ? "🔬"
-                      : key.id === "cyperus_species"
-                        ? "🌾"
-                        : "📐"}
+                    {key.icon}
                   </div>
                   <div className="key-card-text">
                     <div className="key-card-title">{key.title}</div>
@@ -176,7 +170,6 @@ function App() {
               </div>
             )}
 
-            {/* ↓ key={currentNodeId} が修正の核心 */}
             <div className="couplet-card" key={currentNodeId}>
               <div className="couplet-header">
                 <span className="couplet-header-text">{activeKey.title}</span>
@@ -193,10 +186,8 @@ function App() {
                         e.currentTarget.classList.add("tapped")
                       }
                       onPointerUp={(e) => {
-                        setTimeout(
-                          () => e.currentTarget.classList.remove("tapped"),
-                          200,
-                        );
+                        const el = e.currentTarget;
+                        setTimeout(() => el.classList.remove("tapped"), 200);
                       }}
                       onPointerCancel={(e) =>
                         e.currentTarget.classList.remove("tapped")
@@ -236,7 +227,10 @@ function App() {
                 <div className="result-page">
                   <span className="result-page-icon">📖</span>
                   <div className="result-page-text">
-                    <div className="result-page-label">図譜ページ</div>
+                    {/* label-meta クラスを追加して共通スタイルを適用 */}
+                    <div className="result-page-label label-meta">
+                      図譜ページ
+                    </div>
                     <div className="result-page-num">p. {result.page}</div>
                     <div className="result-page-book">
                       星野卓二・正木智美「日本カヤツリグサ科植物図譜」
@@ -247,7 +241,8 @@ function App() {
                 {/* Trail summary */}
                 {history.length > 0 && (
                   <div className="result-trail">
-                    <div className="result-trail-title">
+                    {/* label-meta クラスを追加して共通スタイルを適用 */}
+                    <div className="result-trail-title label-meta">
                       選択した形質（{history.length}ステップ）
                     </div>
                     <div className="result-trail-items">
@@ -266,7 +261,7 @@ function App() {
                   {result.subKey && (
                     <button
                       className="btn-primary"
-                      onClick={() => goSubKey(result.subKey)}
+                      onClick={() => startKey(result.subKey)}
                     >
                       📐 {result.subKeyLabel || "節の検索へ進む"}
                     </button>
