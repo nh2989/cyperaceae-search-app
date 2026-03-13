@@ -18,6 +18,8 @@ function App() {
     setScreen("key");
   };
 
+  const isNavigating = React.useRef(false);
+
   const makeChoice = (option) => {
     if (isNavigating.current) return; // 二重タップ防止
     isNavigating.current = true;
