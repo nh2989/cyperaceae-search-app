@@ -319,6 +319,7 @@ body {
   overflow: hidden;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s;
 }
 @media (hover: hover) {
   .option-card:hover {
@@ -327,9 +328,12 @@ body {
   }
 }
 .option-card:active {
-  background: #4caf50;
-  color: white;
+  background: rgba(76, 175, 80, 0.12); /* 12%の緑 */
   transform: scale(0.98);
+  /* color: white; は不要になる */
+  transition:
+    background 0s,
+    transform 0s;
 }
 .option-card:active .option-candidates {
   color: #e8f5e9;
