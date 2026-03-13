@@ -161,23 +161,25 @@ function App() {
             {/* Couplet */}
             <div className="couplet-card">
               <div className="couplet-header">
-                <span className="couplet-header-text">
-                  {activeKey.title} — どちらの特徴に当てはまりますか？
-                </span>
+                <span className="couplet-header-text">{activeKey.title}</span>
               </div>
+              {currentNode.question && (
+                <div className="couplet-question">{currentNode.question}</div>
+              )}
               <div className="couplet-options">
                 {currentNode.options.map((opt, i) => (
                   <div key={i}>
-                    <button className="option-btn" onClick={() => makeChoice(opt)}>
-                      <span className="option-label">{opt.label}</span>
-                      <span className="option-text">{opt.text}</span>
-                      <span className="option-arrow">›</span>
-                    </button>
-                    {opt.candidates && opt.candidates.length > 0 && (
-                      <div className="option-candidates">
-                        {opt.candidates.map(sp => sp.name).join('・')}
+                    <div className="option-card" onClick={() => makeChoice(opt)}>
+                      <div className="option-card-top">
+                        <span className="option-text">{opt.text}</span>
+                        <span className="option-arrow">›</span>
                       </div>
-                    )}
+                      {opt.candidates && opt.candidates.length > 0 && (
+                        <div className="option-candidates">
+                          {opt.candidates.map(sp => sp.name).join('・')}
+                        </div>
+                      )}
+                    </div>
                     {i < currentNode.options.length - 1 && (
                       <div className="divider">— または —</div>
                     )}
