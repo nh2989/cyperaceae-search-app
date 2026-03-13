@@ -320,9 +320,9 @@ body {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   transition:
-    background-color 1.2s,
-    box-shadow 0.2s,
-    transform 0.2s;
+    background-color 1.0s 0.15s,  /* 0.15s 待ってから戻る */
+    border-color 1.0s 0.15s,
+    transform 1.0s 0.15s;
 }
 @media (hover: hover) {
   .option-card:hover {
@@ -331,7 +331,7 @@ body {
   }
 }
 .option-card:active {
-  background: rgba(76, 175, 80, 0.22); /* 22%の緑 */
+  background: rgba(76, 175, 80, 0.12); /* 12%の緑 */
   transform: scale(0.98);
   /* color: white; は不要になる */
   transition:
