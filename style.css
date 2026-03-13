@@ -320,7 +320,7 @@ body {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   transition:
-    background-color 0.2s,
+    background-color 1.2s,
     box-shadow 0.2s,
     transform 0.2s;
 }
