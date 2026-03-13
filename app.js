@@ -197,6 +197,7 @@ function App() {
                 {currentNode.options.map((opt, i) => (
                   <div key={i}>
                     <div
+                      className="option-card"
                       onTouchEnd={(e) => {
                         e.preventDefault(); // 300ms遅延clickをキャンセル
                         makeChoice(opt);
