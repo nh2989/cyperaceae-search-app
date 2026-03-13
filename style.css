@@ -41,14 +41,14 @@
 
   .header-title {
     font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
     letter-spacing: 0.03em;
     flex: 1;
   }
 
   .header-sub {
-    font-size: 10px;
+    font-size: 13px;
     opacity: 0.65;
     letter-spacing: 0.08em;
     font-weight: 300;
@@ -62,7 +62,7 @@
     color: white;
     padding: 5px 12px;
     border-radius: 20px;
-    font-size: 11px;
+    font-size: 13px;
     cursor: pointer;
     font-family: inherit;
     transition: background 0.2s;
@@ -104,7 +104,7 @@
   }
 
   .home-subtitle {
-    font-size: 11px;
+    font-size: 13px;
     color: #7a8a7a;
     letter-spacing: 0.12em;
     font-weight: 300;
@@ -112,7 +112,7 @@
   }
 
   .home-desc {
-    font-size: 13px;
+    font-size: 15px;
     color: #5a6a5a;
     line-height: 1.8;
     margin-top: 14px;
@@ -162,14 +162,14 @@
 
   .key-card-title {
     font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
     color: #1e3a28;
     margin-bottom: 4px;
   }
 
   .key-card-en {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 6px;
@@ -177,7 +177,7 @@
   }
 
   .key-card-desc {
-    font-size: 12px;
+    font-size: 14px;
     color: #7a8a7a;
     line-height: 1.6;
   }
@@ -193,7 +193,7 @@
     padding: 16px 20px;
     background: rgba(0,0,0,0.03);
     border-radius: 12px;
-    font-size: 12px;
+    font-size: 14px;
     color: #8a9a8a;
     line-height: 1.8;
     text-align: center;
@@ -222,13 +222,13 @@
     color: white;
     padding: 3px 10px;
     border-radius: 20px;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.04em;
   }
 
   .back-link {
-    font-size: 12px;
+    font-size: 14px;
     color: #2d5a3d;
     cursor: pointer;
     background: none;
@@ -269,7 +269,7 @@
     border: 1px solid #dde8de;
     border-radius: 20px;
     padding: 4px 10px;
-    font-size: 11px;
+    font-size: 13px;
     color: #5a7a5a;
     display: flex;
     align-items: center;
@@ -281,7 +281,7 @@
   .trail-label {
     font-weight: 700;
     color: #2d5a3d;
-    font-size: 10px;
+    font-size: 12px;
     flex-shrink: 0;
   }
 
@@ -289,12 +289,12 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .trail-arrow {
     color: #aaa;
-    font-size: 10px;
+    font-size: 12px;
     flex-shrink: 0;
   }
 
@@ -322,7 +322,7 @@
   }
 
   .couplet-header-text {
-    font-size: 12px;
+    font-size: 14px;
     opacity: 0.85;
     letter-spacing: 0.05em;
   }
@@ -335,7 +335,7 @@
   }
 
   .couplet-question {
-    font-size: 13px;
+    font-size: 15px;
     color: #2d5a3d;
     font-weight: 600;
     padding: 10px 20px 0;
@@ -369,7 +369,7 @@
   }
 
   .option-text {
-    font-size: 14px;
+    font-size: 16px;
     color: #2a3a2a;
     line-height: 1.65;
     flex: 1;
@@ -377,7 +377,7 @@
 
   .option-arrow {
     color: #aaa;
-    font-size: 18px;
+    font-size: 20px;
     flex-shrink: 0;
     align-self: center;
     transition: transform 0.2s, color 0.2s;
@@ -433,7 +433,7 @@
     background: rgba(255,255,255,0.2);
     padding: 3px 10px;
     border-radius: 20px;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 12px;
@@ -449,7 +449,7 @@
   }
 
   .result-latin {
-    font-size: 14px;
+    font-size: 16px;
     opacity: 0.75;
     font-style: italic;
     letter-spacing: 0.03em;
@@ -479,7 +479,7 @@
   }
 
   .result-page-label {
-    font-size: 10px;
+    font-size: 12px;
     color: #7a9a7a;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -488,13 +488,13 @@
 
   .result-page-num {
     font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     color: #1e3a28;
   }
 
   .result-page-book {
-    font-size: 10px;
+    font-size: 12px;
     color: #8a9a8a;
     margin-top: 2px;
     line-height: 1.4;
@@ -505,7 +505,7 @@
   }
 
   .result-trail-title {
-    font-size: 11px;
+    font-size: 13px;
     color: #8a9a8a;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -523,13 +523,13 @@
     display: flex;
     gap: 10px;
     align-items: flex-start;
-    font-size: 12px;
+    font-size: 14px;
     color: #5a7a5a;
     line-height: 1.5;
   }
 
   .result-trail-step {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     color: #2d5a3d;
     background: #eaf4eb;
@@ -552,7 +552,7 @@
     border: none;
     border-radius: 12px;
     padding: 14px 20px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     font-family: inherit;
@@ -575,7 +575,7 @@
     border: 2px solid #2d5a3d;
     border-radius: 12px;
     padding: 12px 20px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
     cursor: pointer;
     font-family: inherit;
@@ -597,7 +597,7 @@
     border: 1px solid #d0ddd0;
     border-radius: 12px;
     padding: 11px 20px;
-    font-size: 13px;
+    font-size: 15px;
     cursor: pointer;
     font-family: inherit;
     transition: all 0.2s;
@@ -613,7 +613,7 @@
 
   .key-info {
     margin-top: 8px;
-    font-size: 11px;
+    font-size: 13px;
     color: #9aaa9a;
     text-align: center;
     line-height: 1.7;
@@ -623,7 +623,7 @@
   .option-candidates {
     padding: 8px 18px 12px;
     border-top: 1px dashed #d4e8d6;
-    font-size: 12px;
+    font-size: 14px;
     color: #2d5a3d;
     line-height: 1.7;
     background: #f0f7f1;

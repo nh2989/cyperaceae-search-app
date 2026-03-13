@@ -180,9 +180,6 @@ function App() {
                         </div>
                       )}
                     </div>
-                    {i < currentNode.options.length - 1 && (
-                      <div className="divider">— または —</div>
-                    )}
                   </div>
                 ))}
               </div>
