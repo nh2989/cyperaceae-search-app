@@ -320,9 +320,9 @@ body {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   transition:
-    background-color 1.0s 0.15s,  /* 0.15s 待ってから戻る */
-    border-color 1.0s 0.15s,
-    transform 1.0s 0.15s;
+    background-color 0.3s 1.0s,  /* 1.0s 待ってから戻る */
+    border-color 0.3s 1.0s,
+    transform 0.3s 1.0s;
 }
 @media (hover: hover) {
   .option-card:hover {
