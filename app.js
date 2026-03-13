@@ -189,6 +189,18 @@ function App() {
                   <div key={i}>
                     <div
                       className="option-card"
+                      onPointerDown={(e) =>
+                        e.currentTarget.classList.add("tapped")
+                      }
+                      onPointerUp={(e) => {
+                        setTimeout(
+                          () => e.currentTarget.classList.remove("tapped"),
+                          200,
+                        );
+                      }}
+                      onPointerCancel={(e) =>
+                        e.currentTarget.classList.remove("tapped")
+                      }
                       onClick={() => makeChoice(opt)}
                     >
                       <div className="option-card-top">
