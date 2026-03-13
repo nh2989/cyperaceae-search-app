@@ -19,19 +19,25 @@ function App() {
   };
 
   const makeChoice = (option) => {
+    if (isNavigating.current) return; // 二重タップ防止
+    isNavigating.current = true;
+
     const newHistoryItem = {
       nodeId: currentNodeId,
       label: option.label,
-      text: option.text
+      text: option.text,
     };
     if (option.result) {
-      setHistory(prev => [...prev, newHistoryItem]);
+      setHistory((prev) => [...prev, newHistoryItem]);
       setResult(option.result);
       setScreen("result");
     } else {
-      setHistory(prev => [...prev, newHistoryItem]);
+      setHistory((prev) => [...prev, newHistoryItem]);
       setCurrentNodeId(option.next);
     }
+    setTimeout(() => {
+      isNavigating.current = false;
+    }, 500);
   };
 
   const goBack = () => {
@@ -39,7 +45,7 @@ function App() {
       setScreen("home");
     } else {
       const prev = history[history.length - 1];
-      setHistory(h => h.slice(0, -1));
+      setHistory((h) => h.slice(0, -1));
       setCurrentNodeId(prev.nodeId);
       setResult(null);
       if (screen === "result") setScreen("key");
@@ -76,10 +82,14 @@ function App() {
             <span className="header-icon">🌾</span>
             <div style={{ flex: 1 }}>
               <div className="header-title">カヤツリグサ科植物検索表</div>
-              <div className="header-sub">Cyperaceae Interactive Key · 星野卓二・正木智美（2014）</div>
+              <div className="header-sub">
+                Cyperaceae Interactive Key · 星野卓二・正木智美（2014）
+              </div>
             </div>
             {screen !== "home" && (
-              <button className="header-btn" onClick={goHome}>🏠 トップ</button>
+              <button className="header-btn" onClick={goHome}>
+                🏠 トップ
+              </button>
             )}
           </div>
         </header>
@@ -98,13 +108,21 @@ function App() {
             </div>
 
             <div className="key-cards">
-              {Object.values(ALL_KEYS).map(key => (
-                <div key={key.id} className="key-card" onClick={() => startKey(key.id)}>
+              {Object.values(ALL_KEYS).map((key) => (
+                <div
+                  key={key.id}
+                  className="key-card"
+                  onClick={() => startKey(key.id)}
+                >
                   <div
                     className="key-card-icon"
                     style={{ background: `${key.color}18` }}
                   >
-                    {key.id === "genus" ? "🔬" : key.id === "cyperus_species" ? "🌾" : "📐"}
+                    {key.id === "genus"
+                      ? "🔬"
+                      : key.id === "cyperus_species"
+                        ? "🌾"
+                        : "📐"}
                   </div>
                   <div className="key-card-text">
                     <div className="key-card-title">{key.title}</div>
@@ -119,7 +137,8 @@ function App() {
             </div>
 
             <div className="home-info">
-              出典：星野卓二・正木智美（2014）「日本カヤツリグサ科植物図譜」全782頁<br />
+              出典：星野卓二・正木智美（2014）「日本カヤツリグサ科植物図譜」全782頁
+              <br />
               スゲ属の検索表は勝山（2005, 2009）を参考
             </div>
           </div>
@@ -137,7 +156,10 @@ function App() {
                 </button>
               </div>
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${Math.min(stepNum * 8, 90)}%` }} />
+                <div
+                  className="progress-fill"
+                  style={{ width: `${Math.min(stepNum * 8, 90)}%` }}
+                />
               </div>
             </div>
 
@@ -147,12 +169,17 @@ function App() {
                 {history.slice(-4).map((h, i) => (
                   <div key={i} className="trail-item">
                     <span className="trail-label">{h.label}</span>
-                    <span className="trail-text">{h.text.substring(0, 30)}{h.text.length > 30 ? "…" : ""}</span>
+                    <span className="trail-text">
+                      {h.text.substring(0, 30)}
+                      {h.text.length > 30 ? "…" : ""}
+                    </span>
                   </div>
                 ))}
                 {history.length > 4 && (
                   <div className="trail-item">
-                    <span className="trail-text" style={{ color: "#aaa" }}>+{history.length - 4}ステップ</span>
+                    <span className="trail-text" style={{ color: "#aaa" }}>
+                      +{history.length - 4}ステップ
+                    </span>
                   </div>
                 )}
               </div>
@@ -169,14 +196,20 @@ function App() {
               <div className="couplet-options">
                 {currentNode.options.map((opt, i) => (
                   <div key={i}>
-                    <div className="option-card" onClick={() => makeChoice(opt)}>
+                    <div
+                      onTouchEnd={(e) => {
+                        e.preventDefault(); // 300ms遅延clickをキャンセル
+                        makeChoice(opt);
+                      }}
+                      onClick={() => makeChoice(opt)} // PC用
+                    >
                       <div className="option-card-top">
                         <span className="option-text">{opt.text}</span>
                         <span className="option-arrow">›</span>
                       </div>
                       {opt.candidates && opt.candidates.length > 0 && (
                         <div className="option-candidates">
-                          {opt.candidates.map(sp => sp.name).join('・')}
+                          {opt.candidates.map((sp) => sp.name).join("・")}
                         </div>
                       )}
                     </div>
@@ -214,7 +247,9 @@ function App() {
                 {/* Trail summary */}
                 {history.length > 0 && (
                   <div className="result-trail">
-                    <div className="result-trail-title">選択した形質（{history.length}ステップ）</div>
+                    <div className="result-trail-title">
+                      選択した形質（{history.length}ステップ）
+                    </div>
                     <div className="result-trail-items">
                       {history.map((h, i) => (
                         <div key={i} className="result-trail-item">
@@ -229,7 +264,10 @@ function App() {
                 {/* Actions */}
                 <div className="result-actions">
                   {result.subKey && (
-                    <button className="btn-primary" onClick={() => goSubKey(result.subKey)}>
+                    <button
+                      className="btn-primary"
+                      onClick={() => goSubKey(result.subKey)}
+                    >
                       📐 {result.subKeyLabel || "節の検索へ進む"}
                     </button>
                   )}
@@ -245,8 +283,8 @@ function App() {
                 </div>
 
                 <div className="key-info">
-                  ※ 種の同定は図譜の各種の記載・図版をご参照ください<br />
-                  ※ 選択に迷った場合は「一つ前に戻る」で確認できます
+                  ※ 種の同定は図譜の各種の記載・図版をご参照ください
+                  <br />※ 選択に迷った場合は「一つ前に戻る」で確認できます
                 </div>
               </div>
             </div>
