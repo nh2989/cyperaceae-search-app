@@ -331,7 +331,7 @@ body {
   }
 }
 .option-card:active {
-  background: rgba(76, 175, 80, 0.12); /* 12%の緑 */
+  background: rgba(76, 175, 80, 0.22); /* 22%の緑 */
   transform: scale(0.98);
   /* color: white; は不要になる */
   transition:
@@ -339,8 +339,7 @@ body {
     transform 0s;
 }
 .option-card:active .option-candidates {
-  color: #e8f5e9;
-  border-top-color: rgba(255, 255, 255, 0.3);
+  border-top-color: rgba(76, 175, 80, 0.3); /* 旧: white系の色 → 緑系に統一 */
 }
 
 .option-card-top {
