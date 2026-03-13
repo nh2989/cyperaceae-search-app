@@ -1,4 +1,4 @@
-const { useState, useEffect } = React;
+const { useState } = React;
 
 function App() {
   const [screen, setScreen] = useState("home");
@@ -18,12 +18,7 @@ function App() {
     setScreen("key");
   };
 
-  const isNavigating = React.useRef(false);
-
   const makeChoice = (option) => {
-    if (isNavigating.current) return; // 二重タップ防止
-    isNavigating.current = true;
-
     const newHistoryItem = {
       nodeId: currentNodeId,
       label: option.label,
@@ -37,9 +32,6 @@ function App() {
       setHistory((prev) => [...prev, newHistoryItem]);
       setCurrentNodeId(option.next);
     }
-    setTimeout(() => {
-      isNavigating.current = false;
-    }, 300);
   };
 
   const goBack = () => {
@@ -100,9 +92,6 @@ function App() {
         {screen === "home" && (
           <div className="home">
             <div className="home-hero">
-              {/* <span className="home-plant">🌿</span>
-              <div className="home-title">カヤツリグサ科植物検索表</div>
-              <div className="home-subtitle">Cyperaceae of Japan — Interactive Dichotomous Key</div> */}
               <div className="home-desc">
                 標本の形質を観察しながら順番に選択することで、属・節を同定します。
                 まず「属の検索」からはじめてください。スゲ属（Carex）が同定されたら「節の検索」へ進みます。
@@ -187,8 +176,8 @@ function App() {
               </div>
             )}
 
-            {/* Couplet */}
-            <div className="couplet-card">
+            {/* ↓ key={currentNodeId} が修正の核心 */}
+            <div className="couplet-card" key={currentNodeId}>
               <div className="couplet-header">
                 <span className="couplet-header-text">{activeKey.title}</span>
               </div>
