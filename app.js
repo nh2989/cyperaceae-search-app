@@ -39,7 +39,7 @@ function App() {
     }
     setTimeout(() => {
       isNavigating.current = false;
-    }, 500);
+    }, 300);
   };
 
   const goBack = () => {
@@ -200,11 +200,7 @@ function App() {
                   <div key={i}>
                     <div
                       className="option-card"
-                      onTouchEnd={(e) => {
-                        e.preventDefault(); // 300ms遅延clickをキャンセル
-                        makeChoice(opt);
-                      }}
-                      onClick={() => makeChoice(opt)} // PC用
+                      onClick={() => makeChoice(opt)}
                     >
                       <div className="option-card-top">
                         <span className="option-text">{opt.text}</span>
