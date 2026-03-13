@@ -69,7 +69,6 @@ function App() {
 
   return (
     <>
-      <style>{css}</style>
       <div className="app">
         {/* HEADER */}
         <header className="header">
