@@ -320,7 +320,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   transition:
     background-color 0.3s 0.2s,
-    /* 0.15s 待ってから戻る */ border-color 0.3s 0.2s,
+    border-color 0.3s 0.2s,
     transform 0.3s 0.2s;
 }
 @media (hover: hover) {
@@ -335,16 +335,15 @@ body {
   transform: scale(0.98);
 }
 .option-card:active {
-  background: rgba(76, 175, 80, 0.35); /* 12%の緑 */
+  background: rgba(76, 175, 80, 0.35);
   transform: scale(0.98);
   border-color: #2d5016;
-  /* color: white; は不要になる */
   transition:
     background-color 0s,
     transform 0s;
 }
 .option-card:active .option-candidates {
-  border-top-color: rgba(76, 175, 80, 0.3); /* 旧: white系の色 → 緑系に統一 */
+  border-top-color: rgba(76, 175, 80, 0.3);
 }
 
 .option-card-top {
